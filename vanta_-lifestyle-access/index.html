@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>VANTA | Lifestyle Access</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vanta-gold: #d4af37;
+    }
+    
+    html, body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Enforce no global scroll */
+      position: fixed; /* Prevent bouncy scroll on iOS */
+      -webkit-font-smoothing: antialiased;
+      -webkit-user-select: none; /* Prevent accidental text selection */
+      touch-action: manipulation; /* Faster taps, prevents double-tap zoom */
+    }
+
+    #root {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .gold-text {
+      color: var(--vanta-gold);
+    }
+
+    /* Ken Burns Animation */
+    .animate-ken-burns {
+      animation: kenburns 40s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    @keyframes kenburns {
+      0% { transform: scale(1.02); }
+      100% { transform: scale(1.10); }
+    }
+
+    /* Scrollbars */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Layout Utilities */
+    .glass {
+      background: rgba(18, 18, 18, 0.75);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Safe Area for modern mobiles */
+    .safe-top { padding-top: env(safe-area-inset-top); }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+    
+    /* Prevent horizontal scroll on any nested element */
+    * {
+      max-width: 100vw;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
