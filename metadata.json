@@ -1,9 +1,0 @@
-
-{
-  "name": "VANTA: Lifestyle Access",
-  "description": "An ultra-exclusive lifestyle management and event access platform for curated members. Experience high-end events, encrypted networking, and elite concierge services.",
-  "requestFramePermissions": [
-    "camera",
-    "geolocation"
-  ]
-}
